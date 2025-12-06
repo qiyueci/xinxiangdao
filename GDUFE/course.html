@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/logo_s.png">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>校园导航 - 校园心向导</title>
     <!-- 引入Tailwind CSS -->
@@ -57,18 +57,17 @@
         </button>
         <div class="logo">
             <a href="../index.html">
-                <img src="../images/logo_h.png" alt="校园心向导">
-            </a>
-            <p style="font-size: 2rem;">×</p>
-            <a href="../index.html">
                 <img src="../images/GDUFE.svg" alt="广东财经大学">
+            </a>
+            <a href="../index.html">
+                <img src="../images/logo_s.png" alt="校园心向导">
             </a>
         </div>
     </div>
 
     <!-- 侧边导航栏 -->
     <div class="side-nav">
-        <a href="position.html" class="side-nav-item active">
+        <a href="position.html" class="side-nav-item">
             <i class="fas fa-map"></i>
             <span>校园导航</span>
         </a>
@@ -88,7 +87,7 @@
             <i class="fas fa-book-open"></i>
             <span>图书馆指南</span>
         </a>
-        <a href="online_courses.html" class="side-nav-item">
+        <a href="online_courses.html" class="side-nav-item active">
             <i class="fas fa-laptop"></i>
             <span>课程查询</span>
         </a>
@@ -109,59 +108,45 @@
                 <i class="fa fa-search text-primary mr-2"></i>课程查询
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 班级选择 -->
-                <div class="space-y-2">
-                    <label for="class-select" class="block text-sm font-medium text-gray-700">
-                        <i class="fa fa-users text-secondary mr-1"></i>选择班级
-                    </label>
-                    <select id="class-select"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
-                        <option value="">请选择班级</option>
-                        <option value="25ds1">25级数据科学与大数据技术1班</option>
-                        <option value="25ds2">25级数据科学与大数据技术2班</option>
-                        <option value="25cs1">25级计算机科学与技术1班</option>
-                        <option value="25cs2">25级计算机科学与技术2班</option>
-                        <option value="25se1">25级软件工程1班</option>
-                        <option value="25se2">25级软件工程2班</option>
-                        <option value="25ai1">25级人工智能1班</option>
-                        <option value="25ai2">25级人工智能2班</option>
-                    </select>
-                </div>
+            <!-- 三级联动查询区域 -->
+            <div class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 第一级：类型选择 -->
+                    <div class="space-y-2">
+                        <label for="location-type" class="block text-sm font-medium text-gray-700">
+                            <i class="fa fa-filter text-secondary mr-1"></i>选择类型
+                        </label>
+                        <select id="location-type"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
+                            <option value="">请选择类型</option>
+                            <option value="building">教学楼</option>
+                            <option value="grade">年级</option>
+                        </select>
+                    </div>
 
-                <!-- 星期选择 -->
-                <div class="space-y-2">
-                    <label for="weekday-select" class="block text-sm font-medium text-gray-700">
-                        <i class="fa fa-calendar text-secondary mr-1"></i>选择星期
-                    </label>
-                    <select id="weekday-select"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
-                        <option value="">请选择星期</option>
-                        <option value="1">星期一</option>
-                        <option value="2">星期二</option>
-                        <option value="3">星期三</option>
-                        <option value="4">星期四</option>
-                        <option value="5">星期五</option>
-                        <option value="6">星期六</option>
-                        <option value="0">星期日</option>
-                    </select>
-                </div>
+                    <!-- 第二级：教学楼/年级选择 -->
+                    <div class="space-y-2">
+                        <label for="location-second" class="block text-sm font-medium text-gray-700">
+                            <i class="fa fa-list text-secondary mr-1"></i>选择选项
+                        </label>
+                        <select id="location-second"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom"
+                            disabled>
+                            <option value="">请先选择类型</option>
+                        </select>
+                    </div>
 
-                <!-- 节次选择 -->
-                <div class="space-y-2">
-                    <label for="period-select" class="block text-sm font-medium text-gray-700">
-                        <i class="fa fa-clock-o text-secondary mr-1"></i>选择节次
-                    </label>
-                    <select id="period-select"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
-                        <option value="">请选择节次</option>
-                        <option value="1">第一二节 [01-02]</option>
-                        <option value="2">第三四节 [03-04]</option>
-                        <option value="3">第五六节 [05-06]</option>
-                        <option value="4">第七八节 [07-08]</option>
-                        <option value="5">第九十节 [09-10]</option>
-                        <option value="6">第十一十二节 [11-12]</option>
-                    </select>
+                    <!-- 第三级：教室/班级选择 -->
+                    <div class="space-y-2">
+                        <label for="location-third" class="block text-sm font-medium text-gray-700">
+                            <i class="fa fa-location-arrow text-secondary mr-1"></i>选择目标
+                        </label>
+                        <select id="location-third"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom"
+                            disabled>
+                            <option value="">请先选择上级选项</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -179,7 +164,7 @@
         </section>
 
         <!-- 结果显示区域 -->
-        <section id="result-section" class="bg-white rounded-xl shadow-card p-6 hidden">
+        <section id="result-section" class="bg-white rounded-xl shadow-card p-6 hidden" style="margin-bottom: 100px;">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-lg md:text-xl font-semibold flex items-center">
                     <i class="fa fa-table text-primary mr-2"></i>查询结果
