@@ -11,15 +11,19 @@
     <style>
         /* 心理页面专属样式优化 */
         :root {
-            --psych-primary: #9B59B6; /* 心理主题色：柔和紫色 */
-            --psych-light: #F8F0FC; /* 浅色背景 */
-            --psych-hover: #EBD9F2; /*  hover背景 */
+            --psych-primary: #9B59B6;
+            /* 心理主题色：柔和紫色 */
+            --psych-light: #F8F0FC;
+            /* 浅色背景 */
+            --psych-hover: #EBD9F2;
+            /*  hover背景 */
         }
 
         .nav-card {
             border-top: 4px solid var(--psych-primary);
             transition: all 0.3s ease;
-            cursor: pointer; /* 增加鼠标指针样式，提示可点击 */
+            cursor: pointer;
+            /* 增加鼠标指针样式，提示可点击 */
         }
 
         .nav-card:hover {
@@ -106,9 +110,34 @@
             transform: scale(1.03);
         }
 
+        .heart-btn {
+            padding: 8px 12px;
+            background: #9B59B6;
+            color: white;
+            border-radius: 8px;
+            width: auto;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .heart-btn:hover {
+            background: #d278f6;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .category-content h3 {
@@ -146,7 +175,6 @@
 
             .category-content {
                 padding: 20px 15px;
-                margin: 10px;
             }
         }
     </style>
@@ -155,7 +183,7 @@
 <body>
     <!-- 导航栏 -->
     <div class="nav-bar">
-        <button class="btn" type="button" onclick="window.history.back()">
+        <button class="heart-btn" type="button" onclick="location.href='GDUFE.html'">
             <i class="fas fa-arrow-left"></i> 返回
         </button>
         <div class="logo">
@@ -205,91 +233,101 @@
     </div>
 
     <!-- 页面主体 -->
-    <div class="container" style="padding: 20px 15px 80px;">
+    <div class="container" style="padding: 20px 15px 80px;margin-bottom: 90px;">
         <!-- 紧急帮助模块 -->
         <div class="emergency-help">
             <h3><i class="fas fa-hand-holding-heart"></i> 紧急心理支持</h3>
             <p>如果感到情绪危机或需要即时帮助，可通过以下方式联系专业心理老师</p>
             <div class="help-contact">
-                <button class="help-btn">
-                    <i class="fas fa-phone"></i> 心理热线
+                <button class="help-btn" onclick="dialPhone('12356')">
+                    <i class="fas fa-phone"></i> 心理热线<b>12356</b>
                 </button>
                 <button class="help-btn">
-                    <i class="fas fa-comment"></i> 在线咨询
+                    <i class="fas fa-comment"></i> 在线咨询(暂未开通)
                 </button>
             </div>
         </div>
 
         <h3 class="title"><i class="fas fa-lightbulb"></i> 新生常见问题</h3>
         <div class="nav-cards">
-            <!-- 所有卡片都添加showCategory调用 -->
-            <div class="nav-card" onclick="showCategory('adaptation-anxiety')">
-                <i class="fas fa-house-user"></i>
-                <h3>入学适应焦虑</h3>
+            <!-- 卡片与内容组合 -->
+            <div class="card-group">
+                <div class="nav-card" onclick="toggleCategory('adaptation-anxiety')">
+                    <i class="fas fa-house-user"></i>
+                    <h3>入学适应焦虑</h3>
+                </div>
+                <div id="adaptation-anxiety" class="category-content">
+                    <h3>入学适应焦虑</h3>
+                    <p>1. 刚来到完全陌生的地方，会紧张不安太正常啦，很多新生都和你一样，不用强迫自己立刻适应，给自己一周时间慢慢摸索呀。</p>
+                    <p>2. 你可以先从熟悉身边小事开始，比如找到常去的食堂窗口、教学楼路线，一点点掌控感会让焦虑少很多～</p>
+                    <p>3. 要是实在觉得难受，别憋着，和我说说具体是哪方面不适应，咱们一起想办法解决，你不是一个人呀。</p>
+                </div>
             </div>
-            <div class="nav-card" onclick="showCategory('loneliness')">
-                <i class="fas fa-user-friends"></i>
-                <h3>孤独感</h3>
+
+            <div class="card-group">
+                <div class="nav-card" onclick="toggleCategory('loneliness')">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>孤独感</h3>
+                </div>
+                <div id="loneliness" class="category-content">
+                    <h3>孤独感</h3>
+                    <p>1. 离开熟悉的圈子，没人随时陪着说话，肯定会觉得孤单，这份想念特别真实，不用觉得不好意思。</p>
+                    <p>2. 其实身边的同学都在悄悄寻找朋友呢，你可以试着主动打个招呼、分享点小零食，慢慢就会发现有人和你同频啦。</p>
+                    <p>3. 独处也是一种能力哦，你可以利用这段时间做些喜欢的事，比如看本书、听首歌，说不定会有新的感悟～</p>
+                </div>
             </div>
-            <div class="nav-card" onclick="showCategory('academic-pressure')">
-                <i class="fas fa-book-reader"></i>
-                <h3>学业压力</h3>
+
+            <div class="card-group">
+                <div class="nav-card" onclick="toggleCategory('academic-pressure')">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>学业压力</h3>
+                </div>
+                <div id="academic-pressure" class="category-content">
+                    <h3>学业压力</h3>
+                    <p>1. 从高中到大学，学习模式变了，暂时跟不上太正常啦，不用因为一次作业或测验就否定自己的能力。</p>
+                    <p>2. 你可以试试把大目标拆成小任务，比如每天吃透一个知识点，慢慢积累就会有进步。</p>
+                    <p>3. 遇到不懂的地方别硬扛，多问问老师和同学，他们其实很乐意帮忙的，请教也是一种学习能力呀。</p>
+                </div>
             </div>
-            <div class="nav-card" onclick="showCategory('self-identity')">
-                <i class="fas fa-search"></i>
-                <h3>自我认同困惑</h3>
+
+            <div class="card-group">
+                <div class="nav-card" onclick="toggleCategory('self-identity')">
+                    <i class="fas fa-search"></i>
+                    <h3>自我认同困惑</h3>
+                </div>
+                <div id="self-identity" class="category-content">
+                    <h3>自我认同困惑</h3>
+                    <p>1. 以前你在小圈子里很优秀，到了大学高手云集，暂时没那么突出，不代表你变差了，只是大家都很厉害呀。</p>
+                    <p>2. 你身上一定有自己的闪光点，比如做事认真、乐于助人，这些都是别人替代不了的。</p>
+                    <p>3. 大学本来就是发现自我的过程呀，慢慢探索自己的兴趣和擅长，你会找到属于自己的位置～</p>
+                </div>
             </div>
-            <div class="nav-card" onclick="showCategory('interpersonal')">
-                <i class="fas fa-comments"></i>
-                <h3>人际关系困扰</h3>
+
+            <div class="card-group">
+                <div class="nav-card" onclick="toggleCategory('interpersonal')">
+                    <i class="fas fa-comments"></i>
+                    <h3>人际关系困扰</h3>
+                </div>
+                <div id="interpersonal" class="category-content">
+                    <h3>人际关系困扰</h3>
+                    <p>1. 来自不同地方的人住在一起，有差异太正常啦，不用强迫自己和别人完全合拍，互相尊重就好。</p>
+                    <p>2. 沟通是解决矛盾的关键，要是有不舒服的地方，试着温和地说出来，真诚的表达反而能拉近距离。</p>
+                    <p>3. 不用刻意讨好所有人，找到几个能聊得来的朋友就很好啦，高质量的关系比数量更重要。</p>
+                </div>
             </div>
-            <div class="nav-card" onclick="showCategory('future-confusion')">
-                <i class="fas fa-compass"></i>
-                <h3>未来迷茫</h3>
+
+            <div class="card-group">
+                <div class="nav-card" onclick="toggleCategory('future-confusion')">
+                    <i class="fas fa-compass"></i>
+                    <h3>未来迷茫</h3>
+                </div>
+                <div id="future-confusion" class="category-content">
+                    <h3>未来迷茫</h3>
+                    <p>1. 刚上大学就对未来有清晰规划的人很少，大部分人都在慢慢探索，你不用着急，先好好享受当下。</p>
+                    <p>2. 你可以多尝试呀，比如听专业相关的讲座、参加实习体验，慢慢就会发现自己感兴趣的方向。</p>
+                    <p>3. 迷茫的时候，做好眼前的事也很重要，认真上好每节课、参加喜欢的社团，机会往往藏在这些日常里～</p>
+                </div>
             </div>
-        </div>
-
-        <!-- 所有分类内容区域 - 与showCategory对应 -->
-        <div id="adaptation-anxiety" class="category-content">
-            <h3>入学适应焦虑</h3>
-            <p>1. 刚来到完全陌生的地方，会紧张不安太正常啦，很多新生都和你一样，不用强迫自己立刻适应，给自己一周时间慢慢摸索呀。</p>
-            <p>2. 你可以先从熟悉身边小事开始，比如找到常去的食堂窗口、教学楼路线，一点点掌控感会让焦虑少很多～</p>
-            <p>3. 要是实在觉得难受，别憋着，和我说说具体是哪方面不适应，咱们一起想办法解决，你不是一个人呀。</p>
-        </div>
-
-        <div id="loneliness" class="category-content">
-            <h3>孤独感</h3>
-            <p>1. 离开熟悉的圈子，没人随时陪着说话，肯定会觉得孤单，这份想念特别真实，不用觉得不好意思。</p>
-            <p>2. 其实身边的同学都在悄悄寻找朋友呢，你可以试着主动打个招呼、分享点小零食，慢慢就会发现有人和你同频啦。</p>
-            <p>3. 独处也是一种能力哦，你可以利用这段时间做些喜欢的事，比如看本书、听首歌，说不定会有新的感悟～</p>
-        </div>
-
-        <div id="academic-pressure" class="category-content">
-            <h3>学业压力</h3>
-            <p>1. 从高中到大学，学习模式变了，暂时跟不上太正常啦，不用因为一次作业或测验就否定自己的能力。</p>
-            <p>2. 你可以试试把大目标拆成小任务，比如每天吃透一个知识点，慢慢积累就会有进步。</p>
-            <p>3. 遇到不懂的地方别硬扛，多问问老师和同学，他们其实很乐意帮忙的，请教也是一种学习能力呀。</p>
-        </div>
-
-        <div id="self-identity" class="category-content">
-            <h3>自我认同困惑</h3>
-            <p>1. 以前你在小圈子里很优秀，到了大学高手云集，暂时没那么突出，不代表你变差了，只是大家都很厉害呀。</p>
-            <p>2. 你身上一定有自己的闪光点，比如做事认真、乐于助人，这些都是别人替代不了的。</p>
-            <p>3. 大学本来就是发现自我的过程呀，慢慢探索自己的兴趣和擅长，你会找到属于自己的位置～</p>
-        </div>
-
-        <div id="interpersonal" class="category-content">
-            <h3>人际关系困扰</h3>
-            <p>1. 来自不同地方的人住在一起，有差异太正常啦，不用强迫自己和别人完全合拍，互相尊重就好。</p>
-            <p>2. 沟通是解决矛盾的关键，要是有不舒服的地方，试着温和地说出来，真诚的表达反而能拉近距离。</p>
-            <p>3. 不用刻意讨好所有人，找到几个能聊得来的朋友就很好啦，高质量的关系比数量更重要。</p>
-        </div>
-
-        <div id="future-confusion" class="category-content">
-            <h3>未来迷茫</h3>
-            <p>1. 刚上大学就对未来有清晰规划的人很少，大部分人都在慢慢探索，你不用着急，先好好享受当下。</p>
-            <p>2. 你可以多尝试呀，比如听专业相关的讲座、参加实习体验，慢慢就会发现自己感兴趣的方向。</p>
-            <p>3. 迷茫的时候，做好眼前的事也很重要，认真上好每节课、参加喜欢的社团，机会往往藏在这些日常里～</p>
         </div>
     </div>
 
@@ -314,35 +352,7 @@
         </div>
     </div>
 
-    <script>
-        // 显示分类内容的函数 - 核心功能优化
-        function showCategory(categoryId) {
-            // 隐藏所有分类内容
-            document.querySelectorAll('.category-content').forEach(el => {
-                el.classList.remove('active');
-            });
-            // 显示目标分类内容
-            const targetEl = document.getElementById(categoryId);
-            if (targetEl) {
-                targetEl.classList.add('active');
-                // 平滑滚动到内容区域
-                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // 为卡片添加点击反馈效果
-        document.querySelectorAll('.nav-card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.style.transform = 'translateY(-3px)';
-                setTimeout(() => {
-                    this.style.transform = 'translateY(-5px)';
-                }, 150);
-                // 点击后恢复样式
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 300);
-            });
-        });
-    </script>
+    <script type="text/javascript" src="../js.js"></script>
 </body>
+
 </html>

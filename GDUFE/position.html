@@ -63,7 +63,7 @@
         </a>
     </div>
     <!-- 页面主体 -->
-    <div class="container" style="padding: 20px 15px 80px;">
+    <div class="container" style="padding: 20px 15px 80px;margin-bottom: 90px;">
         <!-- 导航分类卡片 -->
         <h3 style="color: #4A90E2; margin: 30px 0 15px; font-size: 20px;">校园地点分类</h3>
         <div class="nav-cards">
@@ -105,20 +105,15 @@
             </div>
             <div class="nav-card" onclick="showCategory('bus-station')">
                 <i class="fas fa-bus"></i>
-                <h3>公交站</h3>
+                <h3>公交线路</h3>
                 <p>校内及周边公交线路信息</p>
             </div>
-        </div>
-
-        <!-- 校园地图 -->
-        <div class="map-container">
-            <h3>校园地图</h3>
-            <img src="../images/campus.jpg" alt="" class="map-embed">
         </div>
 
         <!-- 分类内容展示区域 -->
         <!-- 教学楼信息 -->
         <div id="teaching-buildings" class="category-content">
+            <span class="close-btn" onclick="closeCategory('teaching-buildings')">×</span>
             <h3>教学楼信息</h3>
             <div class="location-item">
                 <h4>厚德楼</h4>
@@ -137,7 +132,7 @@
             </div>
             <div class="location-item">
                 <h4>拓新楼</h4>
-                <p>位置：图书馆北</p>
+                <p>位置：中心广场北</p>
                 <p>主要用途：课程教学、实验室、多媒体教室</p>
             </div>
             <div class="location-item">
@@ -148,7 +143,9 @@
         </div>
         <!-- 食堂信息 -->
         <div id="canteens" class="category-content">
+            <span class="close-btn" onclick="closeCategory('canteens')">×</span>
             <h3>食堂信息</h3>
+            <br>
             <div class="location-item">
                 <h4>第一食堂（怡膳园）</h4>
                 <p>位置：云山北路，杏园北，李园西</p>
@@ -175,73 +172,249 @@
             </div>
         </div>
         <!-- 图书馆信息 -->
-        <div id="library" class="category-content">
+        <div id="library" class="category-content library-content">
+            <span class="close-btn" onclick="closeCategory('library')">×</span>
             <h3>佛山校区图书馆</h3>
-            <p>开放时间：8:00-23:00</p>
-            <p>注：寒暑假、法定公众假日具体服务时间请留意图书馆公告。</p>
+            <div class="library-info">
+                <p class="open-time"><strong>开放时间：</strong>8:00-23:00</p>
+                <p class="notice"><strong>注：</strong>寒暑假、法定公众假日具体服务时间请留意图书馆公告。</p>
+            </div>
+
+            <!-- 一层 -->
             <div class="location-item">
                 <h4>一层</h4>
-                <p>A学术报告厅 Lecture Hall：申请使用；东南</p>
-                <p>B密集书库 Compact Stacks：收藏利用率较低的中文图书，可借阅，闭架管理；电梯下去</p>
-                <p>C贵宾室 VIP Reception；东南</p>
-                <p>D自修室 Study Room：提供自习，7:00-23:00；南北各2间</p>
-                <p>E咖啡吧 Café；南</p>
-                <p>F亲水平台 Waterfront Platform；西</p>
-                <p>G空调主控机房 A/C Control Room</p>
-                <p>H低压配电室 Power Supply Room</p>
-                <p>I校区监控室 Security</p>
-                <p>悦习坊：提供自习，8:00-23:00；东南</p>
+                <div class="floor-content">
+                    <div class="room-item">
+                        <span class="room-code">A</span>
+                        <span class="room-name">学术报告厅 (Lecture Hall)</span>
+                        <span class="room-desc">申请使用；东南</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">B</span>
+                        <span class="room-name">密集书库 (Compact Stacks)</span>
+                        <span class="room-desc">收藏利用率较低的中文图书，可借阅，闭架管理；电梯下去</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">C</span>
+                        <span class="room-name">贵宾室 (VIP Reception)</span>
+                        <span class="room-desc">东南</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">D</span>
+                        <span class="room-name">自修室 (Study Room)</span>
+                        <span class="room-desc">提供自习，7:00-23:00；南北各2间</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">E</span>
+                        <span class="room-name">咖啡吧 (Café)</span>
+                        <span class="room-desc">南</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">F</span>
+                        <span class="room-name">亲水平台 (Waterfront Platform)</span>
+                        <span class="room-desc">西</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">G</span>
+                        <span class="room-name">空调主控机房 (A/C Control Room)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">H</span>
+                        <span class="room-name">低压配电室 (Power Supply Room)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">I</span>
+                        <span class="room-name">校区监控室 (Security)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">悦习坊</span>
+                        <span class="room-desc">提供自习，8:00-23:00；东南</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- 二层 -->
             <div class="location-item">
                 <h4>二层</h4>
-                <p>A总服务台 Service Counter：办理图书借还手续及咨询</p>
-                <p>B自助借还区 Self_service Check Out/Book Return</p>
-                <p>C新书阅览区 New Books</p>
-                <p>D藏本与工具书阅览区 Reserved & Reference Books</p>
-                <p>E咨询台 Information</p>
-                <p>F展览区 Exhibition</p>
-                <p>G办公室 Office Area：馆长室，办公室，会客室，会议室，图书委办公室，陈列室，消防监控室</p>
-                <p>教材循环利用区</p>
-                <p>税干阅览区：税干院捐赠图书借阅</p>
+                <div class="floor-content">
+                    <div class="room-item">
+                        <span class="room-code">A</span>
+                        <span class="room-name">总服务台 (Service Counter)</span>
+                        <span class="room-desc">办理图书借还手续及咨询</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">B</span>
+                        <span class="room-name">自助借还区 (Self_service Check Out/Book Return)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">C</span>
+                        <span class="room-name">新书阅览区 (New Books)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">D</span>
+                        <span class="room-name">藏本与工具书阅览区 (Reserved & Reference Books)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">E</span>
+                        <span class="room-name">咨询台 (Information)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">F</span>
+                        <span class="room-name">展览区 (Exhibition)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">G</span>
+                        <span class="room-name">办公室 (Office Area)</span>
+                        <span class="room-desc">馆长室，办公室，会客室，会议室，图书委办公室，陈列室，消防监控室</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">教材循环利用区</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">税干阅览区</span>
+                        <span class="room-desc">税干院捐赠图书借阅</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- 三层 -->
             <div class="location-item">
                 <h4>三层</h4>
-                <p>A经济、管理、法律类图书阅览区 Economics, Management & Law：收藏经济、管理（C、F、D）类图书</p>
-                <p>B文学艺术类图书阅览区 Literature & Arts：收藏文学、艺术（I、J）类图书</p>
-                <p>C外文图书阅览区 Foreign Languages</p>
-                <p>D E期刊阅览区 Periodicals</p>
-                <p>F自助文印区 Self-service Copying</p>
+                <div class="floor-content">
+                    <div class="room-item">
+                        <span class="room-code">A</span>
+                        <span class="room-name">经济、管理、法律类图书阅览区 (Economics, Management & Law)</span>
+                        <span class="room-desc">收藏经济、管理（C、F、D）类图书</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">B</span>
+                        <span class="room-name">文学艺术类图书阅览区 (Literature & Arts)</span>
+                        <span class="room-desc">收藏文学、艺术（I、J）类图书</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">C</span>
+                        <span class="room-name">外文图书阅览区 (Foreign Languages)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">D E</span>
+                        <span class="room-name">期刊阅览区 (Periodicals)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">F</span>
+                        <span class="room-name">自助文印区 (Self-service Copying)</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- 四层 -->
             <div class="location-item">
                 <h4>四层</h4>
-                <p>A社会科学类图书阅览区 Social Sciences：收藏自然科学（N、O、P、Q、R、S、T、U、V、X、Z）类图书</p>
-                <p>B自然科学类图书阅览区 Natu Sciences：收藏社科（A、B、E、G、H、K）类图书</p>
-                <p>C外文图书阅览区（落地书墙）Foreign Languages：收藏原版外文图书</p>
-                <p>D E报纸阅览区 Newspapers</p>
-                <p>G经典名著导读区</p>
+                <div class="floor-content">
+                    <div class="room-item">
+                        <span class="room-code">A</span>
+                        <span class="room-name">社会科学类图书阅览区 (Social Sciences)</span>
+                        <span class="room-desc">收藏自然科学（N、O、P、Q、R、S、T、U、V、X、Z）类图书</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">B</span>
+                        <span class="room-name">自然科学类图书阅览区 (Natu Sciences)</span>
+                        <span class="room-desc">收藏社科（A、B、E、G、H、K）类图书</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">C</span>
+                        <span class="room-name">外文图书阅览区（落地书墙）(Foreign Languages)</span>
+                        <span class="room-desc">收藏原版外文图书</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">D E</span>
+                        <span class="room-name">报纸阅览区 (Newspapers)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">G</span>
+                        <span class="room-name">经典名著导读区</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- 五层 -->
             <div class="location-item">
                 <h4>五层</h4>
-                <p>A电子阅览室 E-reading Room</p>
-                <p>B红棉厅 Hongmian Hall</p>
-                <p>C云海厅 Yunhai Hall</p>
-                <p>D紫荆厅 Zijing Hall</p>
-                <p>E教师研修室 Faculty Research： 老师使用，二楼服务台登记使用</p>
-                <p>F研讨室 Seminar：网上申请</p>
-                <p>G展览区 Exhibition：申请使用</p>
-                <p>H多功能视听与实训室 Multimedia AV & Training Room：申请使用</p>
-                <p>I多媒体资料室 Multimedia Collection</p>
-                <p>J数字图书馆技术应用研究室 Digital-library Research Room</p>
-                <p>K网络技术办公室Network Technology Dept.</p>
-                <p>L网络主控机房 Network Control Room</p>
-                <P>M设备室 Equipment Room</P>
-                <p>上岸吧</p>
-                <p>默识廊</p>
+                <div class="floor-content">
+                    <div class="room-item">
+                        <span class="room-code">A</span>
+                        <span class="room-name">电子阅览室 (E-reading Room)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">B</span>
+                        <span class="room-name">红棉厅 (Hongmian Hall)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">C</span>
+                        <span class="room-name">云海厅 (Yunhai Hall)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">D</span>
+                        <span class="room-name">紫荆厅 (Zijing Hall)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">E</span>
+                        <span class="room-name">教师研修室 (Faculty Research)</span>
+                        <span class="room-desc">老师使用，二楼服务台登记使用</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">F</span>
+                        <span class="room-name">研讨室 (Seminar)</span>
+                        <span class="room-desc">网上申请</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">G</span>
+                        <span class="room-name">展览区 (Exhibition)</span>
+                        <span class="room-desc">申请使用</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">H</span>
+                        <span class="room-name">多功能视听与实训室 (Multimedia AV & Training Room)</span>
+                        <span class="room-desc">申请使用</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">I</span>
+                        <span class="room-name">多媒体资料室 (Multimedia Collection)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">J</span>
+                        <span class="room-name">数字图书馆技术应用研究室 (Digital-library Research Room)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">K</span>
+                        <span class="room-name">网络技术办公室 (Network Technology Dept.)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">L</span>
+                        <span class="room-name">网络主控机房 (Network Control Room)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code">M</span>
+                        <span class="room-name">设备室 (Equipment Room)</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">上岸吧</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">默识廊</span>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 宿舍区信息 -->
         <div id="dormitories" class="category-content">
+            <span class="close-btn" onclick="closeCategory('dormitories')">×</span>
             <h3>宿舍区信息</h3>
+            <br>
             <div class="location-item">
                 <h4>杏园</h4>
                 <p>楼栋：1栋，2栋，3栋</p>
@@ -273,19 +446,85 @@
         </div>
         <!-- 运动场馆信息 -->
         <div id="sports-facilities" class="category-content">
+            <span class="close-btn" onclick="closeCategory('sports-facilities')">×</span>
             <h3>运动场馆信息</h3>
             <!-- 运动场馆具体内容 -->
         </div>
         <!-- 服务设施信息 -->
         <div id="service-facilities" class="category-content">
+            <span class="close-btn" onclick="closeCategory('service-facilities')">×</span>
             <h3>服务设施信息</h3>
-            <!-- 具体内容 -->
+            <br>
+            <div class="location-item">
+                <h4>学而优超市</h4>
+                <p>位置：云山北路</p>
+                <p>营业时间：--</p>
+            </div>
+            <div class="location-item">
+                <img src="../images/cainiao.jpg" alt="" style="height: 64px;float: right;">
+                <h4>菜鸟驿站</h4>
+                <p>位置：第四食堂东口</p>
+                <p>营业时间：全天</p>
+            </div>
+            <div class="location-item">
+                <img src="../images/shunfeng.jpg" alt="" style="height: 64px;float: right;">
+                <img src="../images/youzheng.png" alt="" style="height: 64px;float: right;">
+                <h4>顺丰速递、中国邮政</h4>
+                <p>位置：第四食堂东口</p>
+                <p>营业时间：--</p>
+            </div>
+            <div class="location-item">
+                <img src="../images/jingdong.png" alt="" style="height: 64px;float: right;">
+                <h4>京东快递</h4>
+                <p>位置：学而优超市旁，泳池旁</p>
+                <p>营业时间：--</p>
+            </div>
+            <div class="location-item">
+                <h4>校医室</h4>
+                <div class="floor-content">
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">平诊（工作日）</span>
+                        <span class="room-desc">上午：08:30-11:10，11:40-12:20，下午：14:30-17:20；平诊外其余时间均为急诊</span>
+                        <span class="room-desc">咨询电话：87828210</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">医保咨询以及其他业务办理时间（工作日）</span>
+                        <span class="room-desc">上午：08:30-11:50，下午：14:30-17:20；其余时间不办理和咨询</span>
+                        <span class="room-desc">咨询电话：87828917</span>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-code"></span>
+                        <span class="room-name">学生医保报销时间（工作日）</span>
+                        <span class="room-desc">周二下午14:30-17:20；周四上午：08:30-11:50，下午：14:30-17:20；其余时间不办理</span>
+                    </div>
+                </div>
+                <br>
+                <strong>24小时急救电话（仅限急救时拨打）：18566890063</strong>
+            </div>
         </div>
-        <!-- 公交站信息 -->
+        <!-- 公交线路信息 -->
         <div id="bus-station" class="category-content">
-            <h3>公交站信息</h3>
+            <span class="close-btn" onclick="closeCategory('bus-station')">×</span>
+            <h3>公交线路信息</h3>
+            <br>
+            <div class="location-item bus-images">
+                <img src="../images/busline_west.jpg" alt="西门公交线路">
+                <img src="../images/busline-east.jpg" alt="东门公交线路">
+            </div>
+            <div class="location-item bus-images">
+                <img src="../images/busline_inner.jpg" alt="校内公交线路一览图">
+                <img src="../images/busline_times.png" alt="校外公交线路时间表">
+            </div>
+        </div>
+        <!-- 校园地图 -->
+        <div class="map-container">
+            <h3>校园地图</h3>
+            <img src="../images/campus.jpg" alt="" class="map-embed">
         </div>
     </div>
+
     <!-- 页脚 -->
     <div class="footer">
         <p align="center" style="font-family: 'Times New Roman', Times, serif;">© 2025 校园心向导 - 大学生的校园助手</p>
@@ -308,27 +547,35 @@
     </div>
 
     <script>
-        // 1. 获取元素
+        // 1. 定义全局变量，记录当前激活的分类ID
+        let activeCategoryId = null;
+
+        // 2. 获取元素（原有逻辑保留）
         const btns = document.querySelectorAll('.btn');
         const contents = document.querySelectorAll('.content-item');
 
-        // 2. 绑定点击事件
+        // 3. 绑定点击事件（原有逻辑保留）
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // 2.1 重置所有按钮状态
+                // 重置所有按钮状态
                 btns.forEach(b => b.classList.remove('active'));
-                // 2.2 激活当前按钮
+                // 激活当前按钮
                 btn.classList.add('active');
 
-                // 2.3 隐藏所有内容
+                // 隐藏所有内容
                 contents.forEach(content => content.classList.remove('show'));
-                // 2.4 显示对应内容
+                // 显示对应内容
                 const targetId = btn.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('show');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('show');
+                    // 重置分类激活状态（避免冲突）
+                    activeCategoryId = null;
+                }
             });
         });
 
-        // 新增：显示分类内容的函数
+        // 4. 显示/隐藏分类内容（原有逻辑优化）
         function showCategory(categoryId) {
             // 隐藏所有分类内容
             document.querySelectorAll('.category-content').forEach(el => {
@@ -338,8 +585,26 @@
             const targetEl = document.getElementById(categoryId);
             if (targetEl) {
                 targetEl.classList.add('active');
-                // 滚动到内容区域
-                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // 计算导航栏高度作为偏移量（导航栏高度为60px）
+                const navHeight = document.querySelector('.nav-bar').offsetHeight;
+                // 计算目标元素顶部位置并减去导航栏高度
+                const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+
+                // 平滑滚动到调整后的位置
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 5. 新增：关闭分类内容的函数（点击×触发）
+        function closeCategory(categoryId) {
+            const targetEl = document.getElementById(categoryId);
+            if (targetEl) {
+                targetEl.classList.remove('active'); // 隐藏卡片
+                activeCategoryId = null; // 重置激活状态
             }
         }
     </script>
