@@ -65,6 +65,25 @@
             margin: 15px auto;
             display: block;
         }
+        /* 定义颜色变化的动画关键帧 */
+        @keyframes colorChange {
+            0%   { color: #3498db; }
+            12.5%{ color: #4d34db; }
+            25%  { color: #cb34db; }
+            37.5%{ color: #db346e; }
+            50%  { color: #db7734; }
+            62.5%{ color: #c2db34; }
+            75%  { color: #45db34; }
+            87.5%{ color: #34dba1; }
+            100% { color: #3498db; }
+        }
+
+        /* 应用动画到文字元素 */
+        .color-text {
+            font-size: 30px;      /* 文字大小 */
+            /* 动画属性：动画名 时长 速度曲线 无限循环 */
+            animation: colorChange 10s linear infinite;
+        }
     </style>
 </head>
 
@@ -121,11 +140,11 @@
     </div>
     <!-- 图书馆指南模块 -->
     <div class="container" style="padding: 20px 15px 80px; margin-bottom: 90px;">
-        <div class="nav-card">
-            <h3 style="color: var(--source-primary); font-size: 20px; display: flex; align-items: center; gap: 10px;">
+
+        <div class="card-p">
+            <h3 class="title" style="font-size: 20px; display: flex; align-items: center; gap: 10px;">
                 <i class="fas fa-book-open"></i> 图书馆指南
             </h3>
-
             <p class="library-intro">
                 2025级的同学们，初次踏入佛山校区图书馆，是不是感觉空间广阔、功能多样，一时不知从何逛起？不清楚各楼层的布局，也不知道如何快速找到想看的书、完成借阅？别担心，读完这篇指南，图书馆的每个角落你都能了然于心！
             </p>
@@ -139,16 +158,16 @@
             </div>
         </div>
 
-        <h1 style="margin: 30px 0 15px; color: #333;">布局及功能介绍</h1>
-        <div class="nav-card">
+        <h2 style="margin: 30px 0 15px; color: #333;">布局及功能介绍</h2>
+        <div class="card-p">
             <!-- 一层 -->
             <div class="location-item">
                 <h4>一层</h4>
                 <p class="library-intro">
                     一层是学生自主学习的主要区域，共设有4间自修室，分别位于南北两侧，开放时间为每天早晨7:00至晚上23:00。同在一层的还有温馨舒适的“悦习坊”，这里深受热爱学习的同学们青睐。</p>
                 <p class="library-intro">此外，一层还设有密集书库，但需在入馆后从二楼乘电梯下行到达。该书库平时实行闭库管理，欲借密集书库图书需找老师登记领取。</p>
-                <div class="platform-img" style="width: 100%; height: 180px; font-size: 14px; color: #666;">
-                    一层布局图（可替换为实际图片：../images/library_floor1.jpg）
+                <div class="nav-images">
+                    <img src="../images/lb1.jpg" alt="一层布局图">
                 </div>
                 <div style="margin: 10px;">
                     <span class="platform-tag">自主学习</span>
@@ -211,8 +230,8 @@
                 <p class="library-intro">
                     从正门拾级而上，便抵达了宽敞的二层大厅。迎面而来的是北侧的总服务台，这里不仅办理图书借还，也提供各类咨询服务——同学们有任何疑问，都可以咨询在场的值班老师。旁边还贴心地配备了自助借还设备。</p>
                 <p class="library-intro">大厅南侧是充满活力的新书阅览区，展示近期热门图书。同时，整个二层南翼是政治法律图书阅览区，收藏了丰富的专业类书籍，等待您的探索。</p>
-                <div class="platform-img" style="width: 100%; height: 180px; font-size: 14px; color: #666;">
-                    二层布局图（可替换为实际图片：../images/library_floor2.jpg）
+                <div class="nav-images">
+                    <img src="../images/lb2.jpg" alt="二层布局图">
                 </div>
                 <div style="margin-top: 10px;">
                     <span class="platform-tag">总服务台：北侧，借还书+咨询</span>
@@ -267,8 +286,8 @@
                 <h4>三层</h4>
                 <p class="library-intro">中部为学生自主学习区。电梯出口旁是佛山文化空间，按照佛山“十大传统文化”设置，展示有佛山本土文化书籍、龙舟、龙狮、陶瓷和剪纸等实物。</p>
                 <p class="library-intro">该层南侧为文学艺术类图书阅览区，收藏文学与艺术类书籍；北侧为经济管理类图书阅览区，收藏经济与管理类图书。</p>
-                <div class="platform-img" style="width: 100%; height: 180px; font-size: 14px; color: #666;">
-                    三层布局图（可替换为实际图片：../images/library_floor3.jpg）
+                <div class="nav-images">
+                    <img src="../images/lb3.jpg" alt="三层布局图">
                 </div>
                 <div style="margin-top: 10px;">
                     <span class="platform-tag">佛山文化空间：电梯旁，本土文化展示</span>
@@ -306,8 +325,8 @@
                 <h4>四层</h4>
                 <p class="library-intro">四楼中部同样设置为学生自主学习区。电梯出口旁坐落着经典名著导读区，汇集了893种、共计1006册古今中外经典名著。</p>
                 <p class="library-intro">该层南侧为自然科学类图书阅览区，北侧为人文社科类图书阅览区，分别收藏相应类别的图书。</p>
-                <div class="platform-img" style="width: 100%; height: 180px; font-size: 14px; color: #666;">
-                    四层布局图（可替换为实际图片：../images/library_floor4.jpg）
+                <div class="nav-images">
+                    <img src="../images/lb4.jpg" alt="四层布局图">
                 </div>
                 <div style="margin-top: 10px;">
                     <span class="platform-tag">经典名著导读区：电梯旁，古今名著</span>
@@ -346,8 +365,8 @@
                 <h4>五层</h4>
                 <p class="library-intro">南面是厚积堂，一共有180个学习座位，为大开间设计，宽敞明亮舒适。南面还有3间教师研修室和4间研讨室，同学们可以通过网上预约使用。</p>
                 <p class="library-intro">中部是默识廊学习区，共有60个学习座位，学习桌相对独立，带近光源和插座，适合专注学习。</p>
-                <div class="platform-img" style="width: 100%; height: 180px; font-size: 14px; color: #666;">
-                    五层布局图（可替换为实际图片：../images/library_floor5.jpg）
+                <div class="nav-images">
+                    <img src="../images/lb5.jpg" alt="">
                 </div>
                 <div style="margin-top: 10px;">
                     <span class="platform-tag">厚积堂：南面，180个座位</span>
@@ -422,7 +441,7 @@
                 </div>
             </div>
 
-            <p style="text-align: center; margin: 30px 0; font-size: 16px; color: #4A90E2; font-weight: 500;">
+            <p class="color-text" style="text-align: center;">
                 还等什么？快来图书馆探索吧！
             </p>
         </div>
@@ -433,7 +452,7 @@
     <div class="footer">
         <p align="center" style="font-family: Fangsong;">© 校园心向导开发团队</p>
     </div>
-    
+
     <!-- 底部Tab栏 -->
     <div class="tab-bar">
         <div class="tab-item">
@@ -449,6 +468,7 @@
             <a href="../thanks.html" class="text">鸣谢</a>
         </div>
     </div>
+    
 </body>
 
 </html>

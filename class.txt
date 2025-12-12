@@ -1,0 +1,29 @@
+"25数据科学与大数据技术1": {
+        "1": {
+            "2": { course: "数学分析IIa", teacher: "欧柳曼", weeks: "1-16(周)", location: "笃行楼(SJ2)302", period: "第三四节 [03-04]" },
+            "4": { course: "数学分析IIa", teacher: "欧柳曼", weeks: "1-16(周)", location: "笃行楼(SJ2)302", period: "第七八节 [07-08]" },
+        },
+        "2": {
+            "1": { course: "数学分析IIa", teacher: "欧柳曼", weeks: "1-16(周)", location: "笃行楼(SJ2)302", period: "第一二节 [01-02]" },
+            "3": { course: "形势与政策 II", teacher: "卢秀芬", weeks: "7,9,12,14(周)", location: "笃行楼(SJ2)312", period: "第五六节 [05-06]" },
+        },
+        "3": {
+            "3": { course: "大学生劳动教育", teacher: "尹来盛", weeks: "1,4,8,12,16(周)", location: "励学楼(SJ1)306", period: "第五六节 [05-06]" },
+            "4": { course: "高等代数Ⅱ", teacher: "谭学忠", weeks: "1-16(单周)", location: "笃行楼(SJ2)403", period: "第七八节 [07-08]" },
+            "5": { course: "走在前列的广东实践", teacher: "项锐", weeks: "1-16(周)", location: "笃行楼(SJ2)420", period: "第九十节 [09-10]" },
+            "6": { course: "马克思主义基本原理", teacher: "王颖", weeks: "1-16(双周)", location: "暂未安排", period: "第十一十二节 [11-12]" },
+        },
+        "4": {
+            "2": { course: "数据科学基础", teacher: "崔紫薇", weeks: "1-16(周)", location: "笃行楼(SJ2)403", period: "第三四节 [03-04]" },
+            "3": { course: "Python程序设计与数据采集", teacher: "石琳", weeks: "1-16(周)", location: "笃行楼(SJ2)503", period: "第五六节 [05-06]" },
+            "4": { course: "数据科学基础", teacher: "崔紫薇", weeks: "1-16(周)", location: "笃行楼(SJ2)403", period: "第七八节 [07-08]" },
+        },
+        "5": {
+            "1": { course: "高等代数Ⅱ", teacher: "谭学忠", weeks: "1-16(单周)", location: "笃行楼(SJ2)403", period: "第一二节 [01-02]" },
+            "2": { course: "Python程序设计与数据采集", teacher: "石琳", weeks: "1-16(周)", location: "笃行楼(SJ2)404", period: "第三四节 [03-04]" },
+            "3": { course: "马克思主义基本原理", teacher: "王颖", weeks: "1-16(双周)", location: "拓新楼(SS1)404", period: "第五六节 [05-06]" },
+            "4": { course: "思想道德与法治", teacher: "曹康莉", weeks: "1-16(周)", location: "励学楼(SJ1)108", period: "第七八节 [07-08]" },
+        },
+        "6": {},
+        "0": {}
+    },

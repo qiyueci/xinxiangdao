@@ -133,12 +133,10 @@
     <!-- 页面主体 -->
     <div class="container" style="padding: 20px 15px 80px;margin-bottom: 70px;">
         <!-- 网课平台指南模块 -->
-        <div class="nav-card" style="margin-bottom: 30px;">
+        <div class="card" style="margin-bottom: 30px;">
             <h3 style="color: var(--source-primary); font-size: 20px; display: flex; align-items: center; gap: 10px;">
                 <i class="fas fa-laptop-code"></i> 常用网课平台选择指南
             </h3>
-
-
             <!-- 平台分类速览表格 -->
             <h4 style="margin: 20px 0 10px; color: #333; font-size: 16px;">平台分类速览</h4>
             <div class="responsive-table">
@@ -160,9 +158,9 @@
                         </tr>
                         <tr>
                             <td>职业技能平台</td>
-                            <td>国家教育平台、慕课网</td>
-                            <td>实战性强、目标明确、与就业挂钩</td>
-                            <td>求职者、职场新人、转行人士</td>
+                            <td>国家教育平台</td>
+                            <td>权威免费、资源全覆盖，支持证书考核与个性化学习</td>
+                            <td>全年龄段终身学习者、职业技能提升者、院校师生、职场转型人群</td>
                         </tr>
                         <tr>
                             <td>专业精英平台</td>
@@ -179,33 +177,39 @@
 
         <!-- 综合类知识平台 -->
         <h2 style="margin: 20px 0 10px; color: #4A90E2; ">1. 综合类知识平台（适合终身学习）</h2>
-        <div class="nav-cards" style="margin-top: 10px;">
+        <div class="cards" style="margin-top: 10px;">
             <!-- 中国大学MOOC -->
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/mooc.png" alt="中国大学MOOC" style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">中国大学MOOC（慕课）</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://www.icourse163.org/">中国大学MOOC（慕课）</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">与国内顶尖高校合作，提供系统化的大学正牌课程，学习流程（作业、考试）完整，免费开放核心资源。</p>
                 <span class="platform-tag">适合：系统学习大学学科知识</span>
             </div>
 
             <!-- 网易公开课 -->
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/wygkk.png" alt="网易公开课" style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">网易公开课</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://open.163.com/">网易公开课</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">引入大量TED、国际名校公开课，内容前沿多元，有助于开阔国际视野和接触前沿思想。</p>
                 <span class="platform-tag">适合：接触国际视野+前沿思想</span>
             </div>
 
             <!-- B站 -->
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/bilibili.png" alt="bilibili"
                         style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">B站（bilibili）</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://www.bilibili.com/">B站（bilibili）</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">强大的免费学习资源库，内容覆盖全领域，学习氛围浓厚，支持弹幕互动，教程实用性强。</p>
                 <span class="platform-tag">适合：所有人群</span>
@@ -213,10 +217,12 @@
             </div>
 
             <!-- 学堂在线 -->
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/xuetangx.jpg" alt="学堂在线" style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">学堂在线</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://www.xuetangx.com/">学堂在线</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">由清华大学发起，汇聚清华、MIT、斯坦福等顶尖高校课程，科技类课程质量突出。</p>
                 <span class="platform-tag">适合：前沿科技+高端学术需求</span>
@@ -225,56 +231,75 @@
 
         <!-- 职业技能类平台 -->
         <h2 style="margin: 30px 0 10px; color: #FF7A45; ">2. 职业技能与实用技能类（提升竞争力）</h2>
-        <div class="nav-cards" style="margin-top: 10px;">
-            <div class="nav-card platform-card">
+        <div class="cards" style="margin-top: 10px;">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/lifelong.svg" alt="国家终生教育平台"
                         style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">国家终生教育平台</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://le.ouchn.cn/home">国家终身教育平台</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">汇聚了338所知名高校课程资源，课程应有尽有，职场板块全面。/p>
                     <span class="platform-tag">适合：职场新人、打工人、大学生</span>
                     <span class="platform-tag">特色：考证必备</span>
             </div>
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/zhiye.png" alt="国家职业教育智慧平台"
                         style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">国家职业教育智慧平台</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://vocational.smartedu.cn/">国家职业教育智慧教育平台</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">教育部联合多家职业院校创建，提供了各行各业的职业技能培训精品课程。</p>
-                    <span class="platform-tag">适合：职场新人、打工人、大学生</span>
-                    <span class="platform-tag">特色：职业导向</span>
+                <span class="platform-tag">适合：职场新人、打工人、大学生</span>
+                <span class="platform-tag">特色：职业导向</span>
             </div>
         </div>
 
         <!-- 专业精英类平台 -->
         <h2 style="margin: 30px 0 10px; color: #9B59B6;">3. 专业与精英提升类（深度系统化学习）</h2>
-        <div class="nav-cards" style="margin-top: 10px;">
+        <div class="cards" style="margin-top: 10px;">
             <!-- Coursera -->
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/coursera.svg" alt="Coursera"
                         style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">Coursera（国际平台）</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://www.coursera.org/">Coursera（国际平台）</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">与顶级大学和公司合作，提供专项课程和在线学位，证书含金量高，学习体系严谨。</p>
                 <span class="platform-tag">适合：系统化学习+高认可证书</span>
             </div>
 
             <!-- edX -->
-            <div class="nav-card platform-card">
+            <div class="card platform-card">
                 <div class="platform-header">
                     <img src="../images/edx.svg" alt="edX" style="width: 64px;height: 64px;border-radius: 6px;">
-                    <h3 style="margin: 0; font-size: 17px;">edX（国际平台）</h3>
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://www.edx.org/">edX（国际平台）</a>
+                    </h3>
                 </div>
                 <p class="platform-desc">由哈佛和MIT创立，课程学术性强，部分课程可兑换大学学分，适合深度学术提升。</p>
                 <span class="platform-tag">适合：留学计划+学术提升</span>
             </div>
+
+            <div class="card platform-card">
+                <div class="platform-header">
+                    <img src="../images/Udacity.jpeg" alt="edX" style="width: 64px;height: 64px;border-radius: 6px;">
+                    <h3 style="margin: 0; font-size: 17px;">
+                        <a href="https://www.udacity.com/">Udacity（国际平台）</a>
+                    </h3>
+                </div>
+                <p class="platform-desc">由硅谷谷歌无人车之父创立，与谷歌、亚马逊等大厂联合开发课程，以纳米学位为核心，侧重实战项目与职场技能衔接。</p>
+                <span class="platform-tag">适合：科技领域转行+职场技能进阶</span>
+            </div>
         </div>
 
         <!-- 选择建议与温馨提示 -->
-        <div class="nav-card" style="background-color: #f0f7ff; border-radius: 8px; padding: 15px; margin: 20px 0;">
+        <div class="card" style="background-color: #f0f7ff; border-radius: 8px; padding: 15px; margin: 20px 0;">
             <h5 style="margin: 0 0 10px; color: #4A90E2; font-size: 15px;">
                 <i class="fas fa-lightbulb"></i> 选择建议与温馨提示
             </h5>

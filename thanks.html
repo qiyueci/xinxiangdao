@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>校园心向导 - 特别鸣谢</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .teams-container {
             max-width: 1200px;
@@ -17,35 +18,7 @@
             gap: 25px;
             margin-bottom: 90px;
         }
-        
-        .team-card {
-            background-color: #FFFFFF;
-            border-radius: 16px;
-            padding: 30px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .team-title {
-            color: #4A90E2;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f7ff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .team-title i {
-            font-size: 1.5em;
-        }
-        
+
         .team-members {
             font-family: Fangsong;
             font-size: 1.2rem;
@@ -85,12 +58,12 @@
     <!-- 页面主体 -->
     <div class="page-header">
         <h2>特别鸣谢</h2>
-        <p>感谢所有为项目付出努力的团队成员</p>
+        <p>感谢所有为项目付出努力的团队成员<br>(按首字母排序)</p>
     </div>
     
     <div class="teams-container">
-        <div class="team-card">
-            <div class="team-title">
+        <div class="card">
+            <div class="title">
                 <i class="fas fa-info-circle"></i>
                 <span>信息组</span>
             </div>
@@ -99,8 +72,8 @@
             </div>
         </div>
         
-        <div class="team-card">
-            <div class="team-title">
+        <div class="card">
+            <div class="title">
                 <i class="fas fa-image"></i>
                 <span>图片组</span>
             </div>
@@ -109,8 +82,8 @@
             </div>
         </div>
         
-        <div class="team-card">
-            <div class="team-title">
+        <div class="card">
+            <div class="title">
                 <i class="fas fa-code"></i>
                 <span>开发组</span>
             </div>
@@ -119,8 +92,8 @@
             </div>
         </div>
         
-        <div class="team-card">
-            <div class="team-title">
+        <div class="card">
+            <div class="title">
                 <i class="fas fa-comments"></i>
                 <span>反馈组</span>
             </div>
@@ -129,9 +102,9 @@
             </div>
         </div>
 
-        <div class="team-card">
-            <div class="team-title">
-                <i class="fas fa-experience"></i>
+        <div class="card">
+            <div class="title">
+                <i class="fas fa-star"></i>
                 <span>体验组</span>
             </div>
             <div class="team-members">

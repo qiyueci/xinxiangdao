@@ -63,47 +63,48 @@
         </a>
     </div>
     <!-- 页面主体 -->
-    <div class="container" style="padding: 20px 15px 80px;margin-bottom: 90px;">
+    <div class="container" style="padding: 20px 15px 80px;margin-bottom: 80px;">
         <!-- 导航分类卡片 -->
-        <h3 style="color: #4A90E2; margin: 30px 0 15px; font-size: 20px;">校园地点分类</h3>
-        <div class="nav-cards">
+        <h3 class="title">校园地点分类</h3>
+        <div class="cards">
             <!-- 教学楼 -->
-            <div class="nav-card" onclick="showCategory('teaching-buildings')">
+            <div class="card" onclick="showCategory('teaching-buildings')">
                 <i class="fas fa-university"></i>
-                <h3>教学楼</h3>
+                <h3>教学楼 → <a href="teaching_building.html">详情</a></h3>
                 <p>涵盖所有教学区域，包括主楼、副楼、实验楼等</p>
             </div>
             <!-- 食堂 -->
-            <div class="nav-card" onclick="showCategory('canteens')">
+            <div class="card" onclick="showCategory('canteens')">
                 <i class="fas fa-utensils"></i>
                 <h3>食堂</h3>
                 <p>校内各食堂的位置、营业时间及特色菜品</p>
             </div>
             <!-- 图书馆 -->
-            <div class="nav-card" onclick="showCategory('library')">
+            <div class="card" onclick="showCategory('library')">
                 <i class="fas fa-book"></i>
                 <h3>图书馆</h3>
                 <p>图书馆位置、开放时间、借阅规则及电子资源</p>
             </div>
             <!-- 宿舍区 -->
-            <div class="nav-card" onclick="showCategory('dormitories')">
+            <div class="card" onclick="showCategory('dormitories')">
                 <i class="fas fa-bed"></i>
                 <h3>宿舍区</h3>
                 <p>各宿舍楼分布、门禁时间及生活设施</p>
             </div>
             <!-- 运动场馆 -->
-            <div class="nav-card" onclick="showCategory('sports-facilities')">
+            <div class="card" onclick="showCategory('sports-facilities')">
                 <i class="fas fa-running"></i>
                 <h3>运动场馆</h3>
                 <p>操场、体育馆、健身房等运动设施的位置和开放时间</p>
             </div>
             <!-- 服务设施 -->
-            <div class="nav-card" onclick="showCategory('service-facilities')">
+            <div class="card" onclick="showCategory('service-facilities')">
                 <i class="fas fa-concierge-bell"></i>
                 <h3>服务设施</h3>
                 <p>超市、快递点、医务室等生活服务设施</p>
             </div>
-            <div class="nav-card" onclick="showCategory('bus-station')">
+            <!-- 公交线路 -->
+            <div class="card" onclick="showCategory('bus-station')">
                 <i class="fas fa-bus"></i>
                 <h3>公交线路</h3>
                 <p>校内及周边公交线路信息</p>
@@ -176,7 +177,7 @@
         <div id="library" class="category-content library-content">
             <span class="close-btn" onclick="closeCategory('library')">×</span>
             <h3>佛山校区图书馆<p>详见→<a href="library_guide.html">图书馆指南</a></p></h3>
-            <div class="library-info">
+            <div class="info">
                 <p class="open-time"><strong>开放时间：</strong>8:00-23:00</p>
                 <p class="notice"><strong>注：</strong>寒暑假、法定公众假日具体服务时间请留意图书馆公告。</p>
             </div>
@@ -520,8 +521,9 @@
             </div>
         </div>
         <!-- 校园地图 -->
+        <h3 class="title">校园地图</h3>
         <div class="map-container">
-            <h3>校园地图</h3>
+            
             <img src="../images/campus.jpg" alt="" class="map-embed">
         </div>
     </div>

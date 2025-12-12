@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo_s.png">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>校园心向导-广财大-宿舍生活</title>
+    <style>
+        /* 定义颜色变化的动画关键帧 */
+        @keyframes colorChange {
+            0% {
+                color: #3498db;
+            }
+
+            12.5% {
+                color: #4d34db;
+            }
+
+            25% {
+                color: #cb34db;
+            }
+
+            37.5% {
+                color: #db346e;
+            }
+
+            50% {
+                color: #db7734;
+            }
+
+            62.5% {
+                color: #c2db34;
+            }
+
+            75% {
+                color: #45db34;
+            }
+
+            87.5% {
+                color: #34dba1;
+            }
+
+            100% {
+                color: #3498db;
+            }
+        }
+
+        /* 应用动画到文字元素 */
+        .color-text {
+            font-size: 30px;
+            /* 文字大小 */
+            /* 动画属性：动画名 时长 速度曲线 无限循环 */
+            animation: colorChange 10s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <!-- 返回按钮 -->
+        <button class="btn" type="button" onclick="location.href='GDUFE.html'">
+            <i class="fas fa-arrow-left"></i> 返回
+        </button>
+        <div class="logo">
+            <a href="GDUFE.html">
+                <img src="../images/GDUFE.svg" alt="广东财经大学">
+            </a>
+            <a href="../index.html">
+                <img src="../images/logo_s.png" alt="校园心向导">
+            </a>
+        </div>
+    </div>
+
+    <!-- 侧边导航栏 -->
+    <div class="side-nav">
+        <a href="position.html" class="side-nav-item">
+            <i class="fas fa-map"></i>
+            <span>校园导航</span>
+        </a>
+        <a href="source.html" class="side-nav-item">
+            <i class="fas fa-book"></i>
+            <span>学习资源</span>
+        </a>
+        <a href="campus_social.html" class="side-nav-item">
+            <i class="fas fa-users"></i>
+            <span>校园社交</span>
+        </a>
+        <a href="heart.html" class="side-nav-item">
+            <i class="fas fa-heart"></i>
+            <span>心理疏导</span>
+        </a>
+        <a href="library_guide.html" class="side-nav-item">
+            <i class="fas fa-book-open"></i>
+            <span>图书馆指南</span>
+        </a>
+        <a href="course.html" class="side-nav-item">
+            <i class="fas fa-laptop"></i>
+            <span>课程查询</span>
+        </a>
+        <a href="canteen_food.html" class="side-nav-item">
+            <i class="fas fa-utensils"></i>
+            <span>食堂美食</span>
+        </a>
+        <a href="dormitory_life.html" class="side-nav-item">
+            <i class="fas fa-bed"></i>
+            <span>宿舍生活</span>
+        </a>
+    </div>
+    <!-- 页面主体 -->
+    <div class="container" style="padding: 20px 15px 80px;margin-bottom: 90px;">
+        <h2 class="color-text" style="text-align: center;">网页开发中</h2>
+        <!-- 分类卡片 -->
+        <h3 style="color: #4A90E2; margin: 30px 0 15px; font-size: 20px;">教学楼分类</h3>
+        <div class="cards">
+            <div class="card" onclick="showCategory('boxue')">
+                <h3>博学楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('duxing')">
+                <h3>笃行楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('lixue')">
+                <h3>励学楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('houde')">
+                <h3>厚德楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('lexue')">
+                <h3>乐学楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('minxue')">
+                <h3>敏学楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('qinxue')">
+                <h3>勤学楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('tuoxin')">
+                <h3>拓新楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('shiyan')">
+                <h3>实验楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('tongxin')">
+                <h3>同心楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('zhixue')">
+                <h3>致学楼</h3>
+            </div>
+            <div class="card" onclick="showCategory('yishu')">
+                <h3>艺术坊</h3>
+            </div>
+        </div>
+
+        <div id="boxue" class="category-content">
+            <span class="close-btn" onclick="closeCategory('boxue')">×</span>
+            <h3>博学楼</h3>
+            <div class="info">
+                <p>博学楼是学校主要的教学楼之一。</p>
+                <p><strong>主要功能：</strong></p>
+                <p><strong>楼层分布：</strong></p>
+            </div>
+            <div class="location-item">
+                <h4></h4>
+            </div>
+        </div>
+        <div id="duxing" class="category-content">
+            <span class="close-btn" onclick="closeCategory('duxing')">×</span>
+            <h3>笃行楼</h3>
+            <p>第二教学楼</p>
+            <div class="location-item"></div>
+        </div>
+        <div id="lixue" class="category-content">
+            <span class="close-btn" onclick="closeCategory('lixue')">×</span>
+            <h3>励学楼</h3>
+        </div>
+        <div id="houde" class="category-content">
+            <span class="close-btn" onclick="closeCategory('houde')">×</span>
+            <h3>厚德楼</h3>
+        </div>
+        <div id="lexue" class="category-content">
+            <span class="close-btn" onclick="closeCategory('lexue')">×</span>
+            <h3>乐学楼</h3>
+        </div>
+        <div id="minxue" class="category-content">
+            <span class="close-btn" onclick="closeCategory('minxue')">×</span>
+            <h3>敏学楼</h3>
+        </div>
+        <div id="qinxue" class="category-content">
+            <span class="close-btn" onclick="closeCategory('qinxue')">×</span>
+            <h3>勤学楼</h3>
+        </div>
+        <div id="tuoxin" class="category-content">
+            <span class="close-btn" onclick="closeCategory('tuoxin')">×</span>
+            <h3>拓新楼</h3>
+        </div>
+        <div id="shiyan" class="category-content">
+            <span class="close-btn" onclick="closeCategory('shiyan')">×</span>
+            <h3>实验楼</h3>
+        </div>
+        <div id="tongxin" class="category-content">
+            <span class="close-btn" onclick="closeCategory('tongxin')">×</span>
+            <h3>同心楼</h3>
+        </div>
+        <div id="zhixue" class="category-content">
+            <span class="close-btn" onclick="closeCategory('zhixue')">×</span>
+            <h3>致学楼</h3>
+        </div>
+        <div id="yishu" class="category-content">
+            <span class="close-btn" onclick="closeCategory('yishu')">×</span>
+            <h3>艺术坊</h3>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p align="center" style="font-family: Fangsong;">© 校园心向导开发团队</p>
+    </div>
+
+    <!-- 底部Tab栏 -->
+    <div class="tab-bar">
+        <div class="tab-item">
+            <a href="../index.html" class="text">主页</a>
+        </div>
+        <div class="tab-item">
+            <a href="../school.html" class="text">学校</a>
+        </div>
+        <div class="tab-item">
+            <a href="../link_us.html" class="text">联系我们</a>
+        </div>
+        <div class="tab-item">
+            <a href="../thanks.html" class="text">鸣谢</a>
+        </div>
+    </div>
+
+    <script>
+        // 1. 定义全局变量，记录当前激活的分类ID
+        let activeCategoryId = null;
+
+        // 2. 获取元素（原有逻辑保留）
+        const btns = document.querySelectorAll('.btn');
+        const contents = document.querySelectorAll('.content-item');
+
+        // 3. 绑定点击事件（原有逻辑保留）
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 重置所有按钮状态
+                btns.forEach(b => b.classList.remove('active'));
+                // 激活当前按钮
+                btn.classList.add('active');
+
+                // 隐藏所有内容
+                contents.forEach(content => content.classList.remove('show'));
+                // 显示对应内容
+                const targetId = btn.getAttribute('data-target');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('show');
+                    // 重置分类激活状态（避免冲突）
+                    activeCategoryId = null;
+                }
+            });
+        });
+
+        // 4. 显示/隐藏分类内容（原有逻辑优化）
+        function showCategory(categoryId) {
+            // 隐藏所有分类内容
+            document.querySelectorAll('.category-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // 显示当前选中的分类内容
+            const targetEl = document.getElementById(categoryId);
+            if (targetEl) {
+                targetEl.classList.add('active');
+
+                // 计算导航栏高度作为偏移量（导航栏高度为60px）
+                const navHeight = document.querySelector('.nav-bar').offsetHeight;
+                // 计算目标元素顶部位置并减去导航栏高度
+                const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+
+                // 平滑滚动到调整后的位置
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 5. 新增：关闭分类内容的函数（点击×触发）
+        function closeCategory(categoryId) {
+            const targetEl = document.getElementById(categoryId);
+            if (targetEl) {
+                targetEl.classList.remove('active'); // 隐藏卡片
+                activeCategoryId = null; // 重置激活状态
+            }
+        }
+    </script>
+</body>
+
+</html>

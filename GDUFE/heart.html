@@ -19,82 +19,138 @@
             /*  hover背景 */
         }
 
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            /* 更灵活的自动填充 */
+            gap: 24px;
+            margin: 25px 0;
+            padding: 0 10px;
+            /* 左右留白，避免贴边 */
+        }
+
+        /* 导航卡片样式增强 */
         .nav-card {
             border-top: 4px solid var(--psych-primary);
-            transition: all 0.3s ease;
+            background-color: white;
+            border-radius: 12px;
+            /* 增加圆角，更柔和 */
+            padding: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 更平滑的过渡曲线 */
             cursor: pointer;
-            /* 增加鼠标指针样式，提示可点击 */
+            box-shadow: 0 4px 12px rgba(155, 89, 182, 0.08);
+            /* 基础阴影 */
         }
 
         .nav-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(155, 89, 182, 0.15);
+            /* 增强hover阴影 */
+            border-top-color: #8E44AD;
+            /* 深色边框强调 */
         }
 
         .nav-card i {
             color: var(--psych-primary);
-        }
-
-        h3.title {
-            color: var(--psych-primary);
-            margin: 30px 15px 15px;
-            font-size: 22px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-
-        h3.title i {
-            margin-right: 10px;
-        }
-
-        .nav-card p {
-            line-height: 1.8;
-            font-size: 15px;
-            color: #555;
+            font-size: 24px;
+            /* 增大图标 */
+            margin-bottom: 15px;
+            /* 图标与标题间距 */
+            display: inline-block;
+            /* 确保margin生效 */
         }
 
         .nav-card h3 {
             color: #333;
             font-size: 19px;
             margin-bottom: 12px;
+            transition: color 0.3s ease;
         }
 
-        /* 紧急帮助模块 */
+        .nav-card:hover h3 {
+            color: var(--psych-primary);
+            /* hover时标题变色 */
+        }
+
+        /* 分类内容区域优化 */
+        .category-content {
+            background-color: var(--psych-light);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 10px;
+            /* 与卡片间距 */
+            display: none;
+            /* 默认隐藏 */
+            animation: fadeIn 0.5s ease forwards;
+            /* 渐入动画 */
+            border-left: 3px solid var(--psych-primary);
+            /* 左侧装饰线 */
+        }
+
+        .category-content.active {
+            display: block;
+            /* 激活时显示 */
+        }
+
+        .category-content h3 {
+            color: var(--psych-primary);
+            margin-bottom: 15px;
+            font-size: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+            /* 标题下划线 */
+        }
+
+        /* 紧急帮助模块增强 */
         .emergency-help {
-            background: linear-gradient(135deg, #9B59B6, #7D3C98);
+            background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
             color: white;
             border-radius: 16px;
-            padding: 25px;
+            padding: 30px;
             margin: 20px 15px;
-            box-shadow: 0 6px 15px rgba(155, 89, 182, 0.2);
+            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 紧急模块装饰元素 */
+        .emergency-help::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 40%;
+            height: 40%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
 
         .emergency-help h3 {
             color: white;
-            font-size: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .emergency-help h3 i {
-            margin-right: 10px;
+            font-size: 22px;
+            margin-bottom: 18px;
+            position: relative;
+            /* 确保在装饰元素上方 */
         }
 
         .help-contact {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 18px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            /* 确保小屏不溢出 */
         }
 
         .help-btn {
             flex: 1;
+            min-width: 200px;
+            /* 确保按钮不致过窄 */
             background: white;
             color: var(--psych-primary);
             border: none;
-            border-radius: 8px;
-            padding: 12px 0;
+            border-radius: 10px;
+            padding: 14px 0;
             font-size: 16px;
             font-weight: 500;
             display: flex;
@@ -102,14 +158,39 @@
             justify-content: center;
             gap: 8px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         .help-btn:hover {
-            background: var(--psych-light);
+            background: #fdf7ff;
             transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(155, 89, 182, 0.1);
         }
 
+        /* 标题样式优化 */
+        h3.title {
+            color: var(--psych-primary);
+            margin: 35px 15px 20px;
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        h3.title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background-color: var(--psych-primary);
+            border-radius: 2px;
+        }
         .heart-btn {
             padding: 8px 12px;
             background: #9B59B6;
@@ -128,35 +209,17 @@
             background: #d278f6;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .category-content h3 {
-            color: var(--psych-primary);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .category-content p {
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        /* 适配移动端 */
+        /* 响应式优化 */
         @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px 60px;
+                margin-bottom: 80px;
+            }
+
             .nav-cards {
-                gap: 15px;
-                margin: 15px 0;
+                gap: 18px;
+                margin: 20px 0;
+                padding: 0 5px;
             }
 
             .nav-card {
@@ -164,17 +227,29 @@
             }
 
             .emergency-help {
-                padding: 20px;
-                margin: 15px;
-            }
-
-            .help-contact {
-                flex-direction: column;
-                gap: 10px;
+                padding: 25px 20px;
+                margin: 15px 10px;
             }
 
             .category-content {
                 padding: 20px 15px;
+            }
+
+            h3.title {
+                font-size: 22px;
+                margin: 30px 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-cards {
+                grid-template-columns: 1fr;
+                /* 小屏单列显示 */
+            }
+
+            .help-btn {
+                min-width: 100%;
+                /* 移动端按钮全屏宽 */
             }
         }
     </style>
@@ -252,82 +327,83 @@
         <div class="nav-cards">
             <!-- 卡片与内容组合 -->
             <div class="card-group">
-                <div class="nav-card" onclick="toggleCategory('adaptation-anxiety')">
+                <div class="nav-card" onclick="showCategory('adaptation-anxiety')">
                     <i class="fas fa-house-user"></i>
                     <h3>入学适应焦虑</h3>
                 </div>
-                <div id="adaptation-anxiety" class="category-content">
-                    <h3>入学适应焦虑</h3>
-                    <p>1. 刚来到完全陌生的地方，会紧张不安太正常啦，很多新生都和你一样，不用强迫自己立刻适应，给自己一周时间慢慢摸索呀。</p>
-                    <p>2. 你可以先从熟悉身边小事开始，比如找到常去的食堂窗口、教学楼路线，一点点掌控感会让焦虑少很多～</p>
-                    <p>3. 要是实在觉得难受，别憋着，和我说说具体是哪方面不适应，咱们一起想办法解决，你不是一个人呀。</p>
-                </div>
             </div>
 
             <div class="card-group">
-                <div class="nav-card" onclick="toggleCategory('loneliness')">
+                <div class="nav-card" onclick="showCategory('loneliness')">
                     <i class="fas fa-user-friends"></i>
                     <h3>孤独感</h3>
                 </div>
-                <div id="loneliness" class="category-content">
-                    <h3>孤独感</h3>
-                    <p>1. 离开熟悉的圈子，没人随时陪着说话，肯定会觉得孤单，这份想念特别真实，不用觉得不好意思。</p>
-                    <p>2. 其实身边的同学都在悄悄寻找朋友呢，你可以试着主动打个招呼、分享点小零食，慢慢就会发现有人和你同频啦。</p>
-                    <p>3. 独处也是一种能力哦，你可以利用这段时间做些喜欢的事，比如看本书、听首歌，说不定会有新的感悟～</p>
-                </div>
             </div>
 
             <div class="card-group">
-                <div class="nav-card" onclick="toggleCategory('academic-pressure')">
+                <div class="nav-card" onclick="showCategory('academic-pressure')">
                     <i class="fas fa-book-reader"></i>
                     <h3>学业压力</h3>
                 </div>
-                <div id="academic-pressure" class="category-content">
-                    <h3>学业压力</h3>
-                    <p>1. 从高中到大学，学习模式变了，暂时跟不上太正常啦，不用因为一次作业或测验就否定自己的能力。</p>
-                    <p>2. 你可以试试把大目标拆成小任务，比如每天吃透一个知识点，慢慢积累就会有进步。</p>
-                    <p>3. 遇到不懂的地方别硬扛，多问问老师和同学，他们其实很乐意帮忙的，请教也是一种学习能力呀。</p>
-                </div>
             </div>
 
             <div class="card-group">
-                <div class="nav-card" onclick="toggleCategory('self-identity')">
+                <div class="nav-card" onclick="showCategory('self-identity')">
                     <i class="fas fa-search"></i>
                     <h3>自我认同困惑</h3>
                 </div>
-                <div id="self-identity" class="category-content">
-                    <h3>自我认同困惑</h3>
-                    <p>1. 以前你在小圈子里很优秀，到了大学高手云集，暂时没那么突出，不代表你变差了，只是大家都很厉害呀。</p>
-                    <p>2. 你身上一定有自己的闪光点，比如做事认真、乐于助人，这些都是别人替代不了的。</p>
-                    <p>3. 大学本来就是发现自我的过程呀，慢慢探索自己的兴趣和擅长，你会找到属于自己的位置～</p>
-                </div>
             </div>
 
             <div class="card-group">
-                <div class="nav-card" onclick="toggleCategory('interpersonal')">
+                <div class="nav-card" onclick="showCategory('interpersonal')">
                     <i class="fas fa-comments"></i>
                     <h3>人际关系困扰</h3>
                 </div>
-                <div id="interpersonal" class="category-content">
-                    <h3>人际关系困扰</h3>
-                    <p>1. 来自不同地方的人住在一起，有差异太正常啦，不用强迫自己和别人完全合拍，互相尊重就好。</p>
-                    <p>2. 沟通是解决矛盾的关键，要是有不舒服的地方，试着温和地说出来，真诚的表达反而能拉近距离。</p>
-                    <p>3. 不用刻意讨好所有人，找到几个能聊得来的朋友就很好啦，高质量的关系比数量更重要。</p>
-                </div>
             </div>
 
             <div class="card-group">
-                <div class="nav-card" onclick="toggleCategory('future-confusion')">
+                <div class="nav-card" onclick="showCategory('future-confusion')">
                     <i class="fas fa-compass"></i>
                     <h3>未来迷茫</h3>
                 </div>
-                <div id="future-confusion" class="category-content">
-                    <h3>未来迷茫</h3>
-                    <p>1. 刚上大学就对未来有清晰规划的人很少，大部分人都在慢慢探索，你不用着急，先好好享受当下。</p>
-                    <p>2. 你可以多尝试呀，比如听专业相关的讲座、参加实习体验，慢慢就会发现自己感兴趣的方向。</p>
-                    <p>3. 迷茫的时候，做好眼前的事也很重要，认真上好每节课、参加喜欢的社团，机会往往藏在这些日常里～</p>
-                </div>
+
             </div>
+        </div>
+        <div id="adaptation-anxiety" class="category-content">
+            <h3>入学适应焦虑</h3>
+            <p>1. 刚来到完全陌生的地方，会紧张不安太正常啦，很多新生都和你一样，不用强迫自己立刻适应，给自己一周时间慢慢摸索呀。</p>
+            <p>2. 你可以先从熟悉身边小事开始，比如找到常去的食堂窗口、教学楼路线，一点点掌控感会让焦虑少很多～</p>
+            <p>3. 要是实在觉得难受，别憋着，和我说说具体是哪方面不适应，咱们一起想办法解决，你不是一个人呀。</p>
+        </div>
+        <div id="loneliness" class="category-content">
+            <h3>孤独感</h3>
+            <p>1. 离开熟悉的圈子，没人随时陪着说话，肯定会觉得孤单，这份想念特别真实，不用觉得不好意思。</p>
+            <p>2. 其实身边的同学都在悄悄寻找朋友呢，你可以试着主动打个招呼、分享点小零食，慢慢就会发现有人和你同频啦。</p>
+            <p>3. 独处也是一种能力哦，你可以利用这段时间做些喜欢的事，比如看本书、听首歌，说不定会有新的感悟～</p>
+        </div>
+        <div id="academic-pressure" class="category-content">
+            <h3>学业压力</h3>
+            <p>1. 从高中到大学，学习模式变了，暂时跟不上太正常啦，不用因为一次作业或测验就否定自己的能力。</p>
+            <p>2. 你可以试试把大目标拆成小任务，比如每天吃透一个知识点，慢慢积累就会有进步。</p>
+            <p>3. 遇到不懂的地方别硬扛，多问问老师和同学，他们其实很乐意帮忙的，请教也是一种学习能力呀。</p>
+        </div>
+        <div id="self-identity" class="category-content">
+            <h3>自我认同困惑</h3>
+            <p>1. 以前你在小圈子里很优秀，到了大学高手云集，暂时没那么突出，不代表你变差了，只是大家都很厉害呀。</p>
+            <p>2. 你身上一定有自己的闪光点，比如做事认真、乐于助人，这些都是别人替代不了的。</p>
+            <p>3. 大学本来就是发现自我的过程呀，慢慢探索自己的兴趣和擅长，你会找到属于自己的位置～</p>
+        </div>
+        <div id="interpersonal" class="category-content">
+            <h3>人际关系困扰</h3>
+            <p>1. 来自不同地方的人住在一起，有差异太正常啦，不用强迫自己和别人完全合拍，互相尊重就好。</p>
+            <p>2. 沟通是解决矛盾的关键，要是有不舒服的地方，试着温和地说出来，真诚的表达反而能拉近距离。</p>
+            <p>3. 不用刻意讨好所有人，找到几个能聊得来的朋友就很好啦，高质量的关系比数量更重要。</p>
+        </div>
+        <div id="future-confusion" class="category-content">
+            <h3>未来迷茫</h3>
+            <p>1. 刚上大学就对未来有清晰规划的人很少，大部分人都在慢慢探索，你不用着急，先好好享受当下。</p>
+            <p>2. 你可以多尝试呀，比如听专业相关的讲座、参加实习体验，慢慢就会发现自己感兴趣的方向。</p>
+            <p>3. 迷茫的时候，做好眼前的事也很重要，认真上好每节课、参加喜欢的社团，机会往往藏在这些日常里～</p>
         </div>
     </div>
 
@@ -353,6 +429,68 @@
     </div>
 
     <script type="text/javascript" src="../js.js"></script>
+    <script>
+        // 1. 定义全局变量，记录当前激活的分类ID
+        let activeCategoryId = null;
+
+        // 2. 获取元素（原有逻辑保留）
+        const btns = document.querySelectorAll('.btn');
+        const contents = document.querySelectorAll('.content-item');
+
+        // 3. 绑定点击事件（原有逻辑保留）
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 重置所有按钮状态
+                btns.forEach(b => b.classList.remove('active'));
+                // 激活当前按钮
+                btn.classList.add('active');
+
+                // 隐藏所有内容
+                contents.forEach(content => content.classList.remove('show'));
+                // 显示对应内容
+                const targetId = btn.getAttribute('data-target');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('show');
+                    // 重置分类激活状态（避免冲突）
+                    activeCategoryId = null;
+                }
+            });
+        });
+
+        // 4. 显示/隐藏分类内容（原有逻辑优化）
+        function showCategory(categoryId) {
+            // 隐藏所有分类内容
+            document.querySelectorAll('.category-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // 显示当前选中的分类内容
+            const targetEl = document.getElementById(categoryId);
+            if (targetEl) {
+                targetEl.classList.add('active');
+
+                // 计算导航栏高度作为偏移量（导航栏高度为60px）
+                const navHeight = document.querySelector('.nav-bar').offsetHeight;
+                // 计算目标元素顶部位置并减去导航栏高度
+                const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+
+                // 平滑滚动到调整后的位置
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 5. 新增：关闭分类内容的函数（点击×触发）
+        function closeCategory(categoryId) {
+            const targetEl = document.getElementById(categoryId);
+            if (targetEl) {
+                targetEl.classList.remove('active'); // 隐藏卡片
+                activeCategoryId = null; // 重置激活状态
+            }
+        }
+    </script>
 </body>
 
 </html>
